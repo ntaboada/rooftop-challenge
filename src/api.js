@@ -23,11 +23,11 @@ const getBlocks = async (token) => {
     return blocksResponse?.data;
 }
 
-const checkBlocks = async (block1, block2) => {
+const checkBlocks = async (block1, block2, token) => {
     const requestBody = {
         blocks: [ block1, block2 ]
     };
-    const checkResponse = await api(CHECK_URL(API_TOKEN), "POST", requestBody);
+    const checkResponse = await api(CHECK_URL(token || API_TOKEN), "POST", requestBody);
     return checkResponse?.message;
 }
 

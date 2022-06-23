@@ -10,7 +10,7 @@ const getNoPresentElements = (arr1, arr2) => {
     return filtered;
 };
 
-async function compareBlocksAlgorithm(blocks) {
+async function compareBlocksAlgorithm(blocks, token) {
   const sortedArray = [];
   // El primer elemento del array ordenado, esta el primer elemento del array de bloques recibidos (por enunciado)
   const firstElement = blocks[0];
@@ -22,7 +22,7 @@ async function compareBlocksAlgorithm(blocks) {
   let i = 0;
   let numberOfRequest = 1;
   do {
-    const response = await apiMethods.checkBlocks(actualElement, filteredArray[i]);
+    const response = await apiMethods.checkBlocks(actualElement, filteredArray[i], token);
     console.log("Se ejecuto la request nro:", numberOfRequest);
     numberOfRequest++;
     if (response) {
