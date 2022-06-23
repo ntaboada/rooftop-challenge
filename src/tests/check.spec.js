@@ -1,8 +1,8 @@
 import { jest } from '@jest/globals'
 
-import compareBlocksAlgorithm from './utils';
+import compareBlocksAlgorithm from '../utils';
 
-import apiMethods from './api.js';
+import apiMethods from '../api.js';
 
 
 const blocks = [

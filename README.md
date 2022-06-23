@@ -14,7 +14,7 @@ npm install
 After you install all the packages, you can run the project:
 
 ```
-node main.js
+npm run start
 ```
 
 ### Tests

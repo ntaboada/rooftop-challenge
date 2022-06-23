@@ -5,10 +5,10 @@ import compareBlocksAlgorithm from './utils.js';
 const check = async (blocks, token) => {
     console.log("Procedemos a ejecutar el algoritmo de sorting: ");
     const sortedBlocks = await compareBlocksAlgorithm(blocks);
-    const encodedBlocks = sortedBlocks.join(',') ;
+    console.log(sortedBlocks);
+    const encodedBlocks = sortedBlocks.join('') ;
     console.log("Verificamos que los bloques fueron ordenados exitosamente: ");
     const response = await apiMethods.verifyEncodedBlocks(encodedBlocks);
-    console.log(response);
     if (response) {
         console.log("El resultado de la operacion fue exitoso");
     } else {

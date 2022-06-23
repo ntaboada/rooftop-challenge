@@ -2,10 +2,11 @@
   "name": "rooftop-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./src/main.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "start": "node ./src/main.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --silent"
   },
   "jest": {
     "transform": {},
