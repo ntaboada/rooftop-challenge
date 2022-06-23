@@ -5,7 +5,13 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "jest": {
+    "transform": {},
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,5 +26,10 @@
   "homepage": "https://github.com/ntaboada/rooftop-challenge#readme",
   "dependencies": {
     "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1",
+    "jest": "^28.1.1"
   }
 }

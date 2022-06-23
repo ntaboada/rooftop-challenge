@@ -1,6 +1,4 @@
-import {
-    checkBlocks
-} from './api.js';
+import apiMethods from './api.js';
 
 
 // Dados 2 arrays, retorna un array con los elementos de arr1 que no estan en arr2
@@ -22,10 +20,11 @@ async function compareBlocksAlgorithm(blocks) {
   let actualElement = sortedArray[sortedArray.length - 1];
 
   let i = 0;
-  
+  let numberOfRequest = 1;
   do {
-    const response = await checkBlocks(actualElement, filteredArray[i]);
-    
+    const response = await apiMethods.checkBlocks(actualElement, filteredArray[i]);
+    console.log("Se ejecuto la request nro:", numberOfRequest);
+    numberOfRequest++;
     if (response) {
         sortedArray.push(filteredArray[i]);
         filteredArray = getNoPresentElements(blocks, sortedArray);

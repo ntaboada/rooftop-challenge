@@ -1,7 +1,6 @@
 
 import fetch from 'node-fetch' 
 
-
 const ROOFTOP_BASE_URL = 'https://rooftop-career-switch.herokuapp.com';
 
 const GET_TOKEN_URL = (email) => `${ROOFTOP_BASE_URL}/token?email=${email}`;
@@ -52,9 +51,12 @@ const api = async (url, method, body = null) => {
     return res;
 }
 
-export {
+
+const apiMethods = {
     getUserToken,
     getBlocks,
     checkBlocks,
     verifyEncodedBlocks
 };
+
+export default apiMethods;
