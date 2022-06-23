@@ -1,5 +1,5 @@
 import apiMethods from './api.js';
-import compareBlocksAlgorithm from './utils.js';
+import {  compareBlocksAlgorithm, getEncodedBlocks } from './utils.js';
 
 const USER_EMAIL = "ntaboada93@gmail.com";
 
@@ -7,7 +7,7 @@ const check = async (blocks, token) => {
     console.log("Procedemos a ejecutar el algoritmo de sorting: ");
     const sortedBlocks = await compareBlocksAlgorithm(blocks, token);
     console.log(sortedBlocks);
-    const encodedBlocks = sortedBlocks.join('') ;
+    const encodedBlocks = getEncodedBlocks(sortedBlocks) ;
     console.log("Verificamos que los bloques fueron ordenados exitosamente: ");
     const response = await apiMethods.verifyEncodedBlocks(encodedBlocks);
     if (response) {

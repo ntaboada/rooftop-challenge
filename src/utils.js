@@ -39,5 +39,10 @@ async function compareBlocksAlgorithm(blocks, token) {
   return sortedArray;
 }
 
+const getEncodedBlocks = (blocks) => blocks.join('');
 
-export default compareBlocksAlgorithm;
+
+export { 
+  compareBlocksAlgorithm,
+  getEncodedBlocks,
+}
